@@ -1,0 +1,309 @@
+
+* {
+    margin:0;
+    padding:0;
+}
+
+body {
+    background-color:cornsilk;
+    font-family: 'Open Sans', sans-serif;
+}
+    
+h1,h2 {
+    font-family: 'Balsamiq Sans', cursive;
+    font-size:'small';
+}
+
+label.error {
+    color: darkred;
+}
+h6{
+    font-style: italic;
+    color: indianred;
+}
+
+header {
+    width: 100%;
+    height: 80px;
+    background-color: #2B6CB0;
+    /*margin-left: 30px;
+    padding-left: 30px;*//*right-top-bottom*/
+    display: flex;
+    justify-content: space-between;
+}
+
+header > div {
+    width: 50%;
+}
+
+.contenedor_logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 100px;
+    margin-left: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;/*flex-start - center - flex-end*/ /*horizontal*/
+    align-items: center;
+    height: 100%;
+}
+
+nav > ul {
+    margin-right: 50px;
+}
+
+nav > ul > li {
+    display: inline;
+    margin-left: 10px;
+}
+
+nav a {
+    color:white;
+    text-decoration: none;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+.galeria img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+
+/*CONTENIDO PRINCIPAL*/
+
+#contenido {
+    width: 80%;
+    margin:auto;
+    max-width: 1280px;
+    min-height: 100vh;
+}
+
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.producto {
+    width: 25%;
+    margin-top: 20px;
+}
+
+.producto img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.producto .detalle {
+    padding: 5px;
+}
+
+.producto .contenedor_producto {
+    background-color: white;
+    width: 80%;
+    margin: auto;
+}
+
+
+
+
+
+input[type=text], input[type=email],
+input[type=number], select, textarea {
+
+    width: 100%;
+    padding: 5px;
+
+}
+
+textarea {
+    resize: none;
+}
+
+.button {
+    padding:5px 10px;
+    color: white;
+    background-color: #2B6CB0;
+    border: none;
+    border-radius: 5px;
+}
+
+.formulario_contacto {
+    width: 500px;
+    margin-top:50px;
+}
+
+
+/*MEDIA QUERIES*/
+
+
+/*Tablets*/
+@media (max-width: 1024px) {
+    .galeria {
+        grid-template-columns: 1fr 1fr;
+    }
+    .producto {
+        width: 50%;
+    }
+
+    .formulario_contacto {
+        width: 100%;
+    }
+}
+
+/*Smartphone*/
+@media (max-width: 480px) {
+
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+
+    .menu {
+        display:block;
+    }
+
+    @keyframes animacion_producto_mobile {
+        0% {
+            transform: scale(0.1); /*0-1*/
+            /*opacity: 0 - 1*/
+        }
+
+        80% {
+            transform: scale(1.1);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    .producto {
+        width: 100%;
+        animation: animacion_producto_mobile 0.8s;
+    }
+
+    header {
+        flex-direction: column;
+        height: 60px;
+        overflow: hidden;
+        transition: all 0.6s;
+       
+        
+    }
+    #contenido {
+        margin-top: 60px;
+    }
+
+    header > div {
+        width: 100%;
+    }
+
+    .contenedor_logo {
+        justify-content: center;
+        margin-top:10px;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    nav > ul {
+        margin:0;
+    }
+
+    nav > ul > li {
+        display: block;
+        margin:0;
+        text-align: center;
+        padding:20px 0;
+    }
+
+}
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    font-family: sans-serif;
+    letter-spacing: 0.03em;
+    line-height: 1.6;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.title{
+    text-align: center;
+    font-size: 10px;
+    color: #6a6a6a;
+    margin-top: 100px;
+    font-weight: 10;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.container{
+    width: 100%;
+    max-width: 1200px;
+    height: 430px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+
+.container .card{
+    width: 900px;
+    height: 430px;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25s;
+}
+
+.container .card:hover{
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+
+.container .card img{
+    width: 250px;
+    height: 300px;
+}
+
+
+.container .card h4{
+    font-weight: 10;
+    font-size: 10;
+}
+
+.container .card p{
+    padding: 0 1rem;
+    font-size: 10px;
+    font-weight: 100;
+}
+
+.container .card a {
+    font-weight: 500;
+    text-decoration: none;
+    color: #3498db;
+}
+
+
+
+
+

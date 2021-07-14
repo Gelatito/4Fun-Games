@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{%block contenido%}
+<h2>Juegos De mundo abierto</h2>
+<div class="productos">
+    {%for X in juegosmu%}
+<div class="producto">
+
+    <div class="container">
+        
+        <div class="card">
+            <img src="{{X.Caratula.url}}" width="100" height="100">
+            <h6>{{X.Plataforma}}</h6>
+            <h5 >{{X.NombreDelJuego}}</h5>
+            <h6>{{X.Descripcion}}</h6>
+            
+        </div>
+    </div>
+</div>
+{%endfor%}
+</div>
+
+
+{% endblock %}

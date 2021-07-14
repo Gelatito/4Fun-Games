@@ -1,0 +1,36 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{%block contenido%}
+
+<div class="slider">
+    <div>
+        <img src="{%static 'core/img/banner1xd.jpg'  %}" alt="">
+    </div>
+    <div>
+        <img src="{%static 'core/img/banner2.jpg'  %}" alt="">
+    </div>
+    <div>
+        <img src="{%static 'core/img/banner3.jpg'  %}" alt="">
+    </div>
+</div>
+
+<h2>Juegos En demostracion</h2>
+<div class="productos">
+    {%for X in juegos%}
+<div class="producto">
+
+    <div class="container">
+       
+        <div class="card">
+            <img src="{{X.Caratula.url}}" width="100" height="100">
+            <h6> Genero:{{X.Categorias}}</h6>
+            <h4 >{{X.NombreDelJuego}}</h4>
+            <a href="{{X.Categorias}}">{{X.Categorias}}</a>
+        </div>
+    </div>
+</div>
+{%endfor%}
+</div>
+    
+
+{%endblock%}
